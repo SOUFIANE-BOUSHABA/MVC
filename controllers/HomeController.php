@@ -30,7 +30,22 @@ function deletStudent() {
     }
 }
 
+function updatestudent() {
+    if (isset($_POST["update"])) {
+        $id=$_POST["id"];
+        $lastName = $_POST["lastName"];
+        $firstName = $_POST["firstName"];
+        $birthDate = $_POST["birthDate"];
+        $class = $_POST["class"];
+        updStudent($id,$lastName, $firstName, $birthDate, $class);
+
+        header("Location:index.php");
+        exit();
+    }
+}
+
 adddStudent();
 deletStudent();
+updatestudent();
 ?>
 
