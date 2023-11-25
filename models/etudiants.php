@@ -32,9 +32,13 @@ function getStudents() {
             $data[] = $row;
         }
     }
-
-  
-
     return $data;
+}
+
+function addStudent($lastName, $firstName, $birthDate, $class) {
+    $conn = connectToDatabase();
+
+    $sql = "INSERT INTO `etudiant`(`id`, `nom`, `prenom`, `date_naissance`, `classe`) VALUES (NULL,'$lastName','$firstName','$birthDate','$class')";
+    $conn->query($sql);
 }
 ?>
