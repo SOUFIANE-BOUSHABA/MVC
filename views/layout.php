@@ -56,8 +56,8 @@
         <thead>
             <tr>
                 <th>ID</th>
-                <th>Last Name</th>
                 <th>First Name</th>
+                <th>Last Name</th>
                 <th>Birth Date</th>
                 <th>Class</th>
                 <th>action</th>
@@ -67,8 +67,8 @@
             <?php foreach ($students as $student): ?>
             <tr>
                 <td><?= $student['id']; ?></td>
-                <td><?= $student['nom']; ?></td>
                 <td><?= $student['prenom']; ?></td>
+                <td><?= $student['nom']; ?></td>
                 <td><?= $student['date_naissance']; ?></td>
                 <td><?= $student['classe']; ?></td>
                 <td><a href="?action=delete&id=<?= $student['id']; ?>">delete </a> <a href="" data-bs-toggle="modal" data-bs-target="#exampleModal<?= $student['id']; ?>">update</a> </td>
@@ -86,14 +86,15 @@
                             <form method="post">
                                <input type="hidden" class="form-control" id="inputLastName" name="id" value="<?= $student['id']; ?>" required>
                                 <div class="mb-3">
-                                    <label for="inputLastName" class="form-label">Last Name</label>
-                                    <input type="text" class="form-control" id="inputLastName" name="lastName" value="<?= $student['nom']; ?>" required>
-                                </div>
                                 <div class="mb-3">
                                     <label for="inputFirstName" class="form-label">First Name</label>
                                     <input type="text" class="form-control" id="inputFirstName" name="firstName" value="<?= $student['prenom']; ?>"
                                         required>
                                 </div>
+                                    <label for="inputLastName" class="form-label">Last Name</label>
+                                    <input type="text" class="form-control" id="inputLastName" name="lastName" value="<?= $student['nom']; ?>" required>
+                                </div>
+                              
                                 <div class="mb-3">
                                     <label for="inputBirthDate" class="form-label">Birth Date</label>
                                     <input type="date" class="form-control" id="inputBirthDate" name="birthDate" value="<?= $student['date_naissance']; ?>"
@@ -103,7 +104,7 @@
                                     <label for="inputClass" class="form-label">Class</label>
                                     <input type="text" class="form-control" id="inputClass" name="class" value="<?= $student['classe']; ?>" required>
                                 </div>
-                                <button type="submit" name="inserer" class="btn btn-primary">Add Student</button>
+                                <button type="submit" name="update" class="btn btn-primary">Add Student</button>
                             </form>
                         </div>
                     </div>

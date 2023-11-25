@@ -44,4 +44,11 @@ function delStudent($id) {
     $sql = "DELETE FROM `etudiant` WHERE id='$id'";
     $conn->query($sql);
 }
+
+function updStudent($id,$lastName, $firstName, $birthDate, $class) {
+    $conn = connectToDatabase();
+
+    $sql = "UPDATE `etudiant` SET `nom`='$lastName',`prenom`='$firstName',`date_naissance`='$birthDate',`classe`='$class' WHERE id ='$id'";
+    $conn->query($sql);
+}
 ?>
