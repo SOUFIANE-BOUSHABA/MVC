@@ -1,10 +1,6 @@
 
 <?php
 
-
-
-
-
 function connectToDatabase() {
     $servername = "localhost";
     $username = "root";
@@ -32,9 +28,20 @@ function getStudents() {
             $data[] = $row;
         }
     }
-
-  
-
     return $data;
+}
+
+function addStudent($lastName, $firstName, $birthDate, $class) {
+    $conn = connectToDatabase();
+
+    $sql = "INSERT INTO `etudiant`(`id`, `nom`, `prenom`, `date_naissance`, `classe`) VALUES (NULL,'$lastName','$firstName','$birthDate','$class')";
+    $conn->query($sql);
+}
+
+function delStudent($id) {
+    $conn = connectToDatabase();
+
+    $sql = "DELETE FROM `etudiant` WHERE id='$id'";
+    $conn->query($sql);
 }
 ?>
