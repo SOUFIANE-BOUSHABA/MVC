@@ -19,7 +19,18 @@ function adddStudent() {
         exit();
     }
 }
-adddStudent();
 
+function deletStudent() {
+    if (isset($_GET['action']) && $_GET['action'] == 'delete' && isset($_GET['id'])) {
+         $id=$_GET['id'];
+        delStudent($id);
+
+        header("Location:index.php");
+        exit();
+    }
+}
+
+adddStudent();
+deletStudent();
 ?>
 
