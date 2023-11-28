@@ -11,12 +11,12 @@
 
 <body>
     <div class="container mt-4">
-        <h1 class="mb-4">Student List</h1>
+        <h1 class="mb-4">contact List</h1>
 
 
 
         <button type="button" class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#exampleModal">
-            Add New Student
+            Add contact
         </button>
 
         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
